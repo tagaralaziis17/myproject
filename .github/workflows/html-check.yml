@@ -1,0 +1,21 @@
+name: HTML Check
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  check-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: List HTML files
+        run: ls *.html
+
+      - name: Show HTML content
+        run: cat index.html
